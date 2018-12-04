@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_screen">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="2">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="-30dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/ic_logo" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="25dp"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/text_pin_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="@string/enter_pin_code"
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/text_size_twenty"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/text_pin_sub_message"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/text_pin_message"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Please Enter Your Pin to Unlock Application"
+                        android:textColor="@color/textColor" />
+
+                    <LinearLayout
+                        android:id="@+id/layout_pin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/text_pin_sub_message"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/text_enter_pin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="@string/enter_pin_code"
+                            android:textColor="@color/textColor" />
+
+                        <com.alimuzaffar.lib.pin.PinEntryEditText
+                            android:id="@+id/edit_pin_entry"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:cursorVisible="false"
+                            android:digits="1234567890"
+                            android:inputType="number"
+                            android:maxLength="4"
+                            android:padding="8dp"
+                            android:textIsSelectable="false"
+                            app:pinCharacterMask="*"
+                            app:pinLineStroke="2dp"
+                            app:pinLineStrokeSelected="4dp"
+                            app:pinTextBottomPadding="4dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout_confirm_pin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/layout_pin"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/text_confirm_pin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="@string/confirm_pin"
+                            android:textColor="@color/textColor" />
+
+                        <com.alimuzaffar.lib.pin.PinEntryEditText
+                            android:id="@+id/edit_confirm_pin_entry"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:cursorVisible="false"
+                            android:digits="1234567890"
+                            android:imeOptions="actionDone"
+                            android:inputType="number"
+                            android:maxLength="4"
+                            android:padding="8dp"
+                            android:textIsSelectable="false"
+                            app:pinCharacterMask="*"
+                            app:pinLineStroke="2dp"
+                            app:pinLineStrokeSelected="4dp"
+                            app:pinTextBottomPadding="4dp" />
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/button_reset_pin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginRight="50dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/button_background_orange"
+                        android:padding="5dp"
+                        android:text="@string/str_continue"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>
